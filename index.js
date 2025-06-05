@@ -14,7 +14,12 @@ function startGame() {
 }
 
 function renderGame() {
-    cardsEl.textContent = `Cards: ${cards}`;
+    cardsEl.textContent = "Cards: "
+
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " ";
+    }
+
     sumEl.textContent = `Sum: ${sum}`;
 
     if (sum <= 20) {
@@ -31,11 +36,8 @@ function renderGame() {
 }
 
 function newCard() {
-    console.log("Drawing a new card from the deck!");
-
     let newCard = 3;
     sum += newCard;
     cards.push(newCard);
     renderGame();
-    console.log(newCard)
 }
